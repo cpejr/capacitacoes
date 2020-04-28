@@ -13,11 +13,11 @@ export default function Home(props) {
           <h1>login login login logiin</h1>
           
           <div className="yellowSquare">
-            <h3>Nome: </h3>
+            <h3>Nome Completo: </h3>
             <input className="loginInput"></input>
           </div>
           <div className="yellowSquare">
-            <h3>Senha: </h3>
+            <h3>Senha (max 6 caracteres): </h3>
             <input className="loginInput"></input>
           </div>
 
