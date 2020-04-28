@@ -24,7 +24,7 @@ export default function Home(props) {
                         <div className="yellowSquare">
                             <Link to='/'>
                                 <button className='buttonText'>
-                                    <h3>Logar</h3>
+                                    <h3>Logarr</h3>
                                 </button>
                             </Link>
                         </div>
