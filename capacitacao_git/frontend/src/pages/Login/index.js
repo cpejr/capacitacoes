@@ -11,7 +11,6 @@ export default function Home(props) {
         <div className="yellowSquare">
 
           <h1>login login login logiin</h1>
-          <img src="lampinho.png" className="imgClass" alt="Main" />
           
           <div className="yellowSquare">
             <h3>Nome: </h3>
