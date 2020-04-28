@@ -11,15 +11,6 @@ export default function Home(props) {
                 <div className="yellowSquare">
                     <h1>login login login logiin</h1>
 
-                    <div className="yellowSquare">
-                        <h3>Nome: </h3>
-                        <input className="loginInput"></input>
-                    </div>
-                    <div className="yellowSquare">
-                        <h3>Senha: </h3>
-                        <input className="loginInput"></input>
-                    </div>
-
                     <div className="yellowSquareContainer">
                         <div className="yellowSquare">
                             <Link to='/'>
