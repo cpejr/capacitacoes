@@ -9,6 +9,9 @@ export default function Home(props) {
 
             <div className="yellowSquareContainer">
                 <div className="yellowSquare">
+      
+                    <img src="lampinho.png" className="imgClass" alt="Main" />
+
                     <h1>login login login</h1>
 
                     <div className="yellowSquare">
