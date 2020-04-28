@@ -9,7 +9,6 @@ export default function Home(props) {
 
             <div className="yellowSquareContainer">
                 <div className="yellowSquare">
-
                     <h1>login login login</h1>
 
                     <div className="yellowSquare">
