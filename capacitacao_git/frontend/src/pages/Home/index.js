@@ -12,7 +12,7 @@ export default function Home(props) {
                     <img src="lampinho.png" className="imgClass" alt="Main" />
                 </div>
                 <div className="yellowSquare">
-                    <h1>Teste teste teste</h1>
+                    <h1>Teste Teste Teste</h1>
                     <Link to='/login'>
                         <button className='buttonText'>
                             <h3>Fazer Login</h3>
