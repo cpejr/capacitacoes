@@ -9,7 +9,7 @@ export default function Home(props) {
 
             <div className="yellowSquareContainer">
                 <div className="yellowSquare">
-                    <h1>login login login</h1>
+                    <h1>login login login logiin</h1>
 
                     <div className="yellowSquare">
                         <h3>Nome: </h3>
