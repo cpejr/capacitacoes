@@ -1,38 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { InputGroup, FormControl, Button } from 'react-bootstrap';
+import { AccountCircle, VpnKey } from '@material-ui/icons';
 import './styles.css';
 
 export default function Home(props) {
   return (
-    <div className="fullPage">
-      <h1>Título da pagina de Login</h1>
+    <div className="fullPage d-flex flex-column">
+      <div className="title">
+        <p style={{ color: '#fff' }}>Controle de Estoque</p>
+      </div>
+      <div className="login-container d-flex flex-column ">
+        <h1 style={{ color: '#fff' }}>Login  </h1>
 
-      <div className="yellowSquareContainer">
-        <div className="yellowSquare">
-
-          <h1>login login login logiin</h1>
-          
-          <div className="yellowSquare">
-            <h3>Nome Completo: </h3>
-            <input className="loginInput"></input>
-          </div>
-          <div className="yellowSquare">
-            <h3>Senha (max 6 caracteres): </h3>
-            <input className="loginInput"></input>
-          </div>
-
-          <div className="yellowSquareContainer">
-            <div className="yellowSquare">
-              <Link to='/'>
-                <button className='buttonText'>
-                  <h3>Logar</h3>
-                </button>
-              </Link>
-            </div>
-          </div>
+        <div className="input-container d-flex flex-column w-100  " >
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text id="basic-addon1"><AccountCircle /></InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </InputGroup>
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text id="basic-addon1"><VpnKey/></InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              placeholder="Password"
+              aria-label="Password"
+              aria-describedby="basic-addon1"
+              type = "password"
+            />
+          </InputGroup>
 
         </div>
+        <Button variant="dark mt-3">Entrar</Button>{' '}
       </div>
+
+
     </div>
   );
 }

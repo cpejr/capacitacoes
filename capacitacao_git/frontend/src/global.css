@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Raleway:wght@500;900&display=swap');
 
+p{ 
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
 h1{ 
     text-align: center;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Raleway', sans-serif;
 }
 
 h3{
@@ -11,7 +16,7 @@ h3{
 }
 
 .fullPage{
-    background-color: rgb(255, 187, 0);
+   
     position: absolute;
     top: 0px; /* Header Height */
     bottom: 0px; /* Footer Height */

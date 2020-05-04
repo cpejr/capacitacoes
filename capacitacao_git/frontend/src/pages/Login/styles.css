@@ -1,4 +1,31 @@
+.fullPage {
+  background-color: #00121e;
+}
+.title{
+  margin-top:30px;
+  font-size: 40px;
+}
+
 .loginInput{
     text-align: center;
     margin: 0 auto;
 }
+
+.login-container{
+  background-color: #264480;
+  width: 320px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 50px;
+}
+
+.input-container{
+  justify-content: space-around;
+}
+
+
