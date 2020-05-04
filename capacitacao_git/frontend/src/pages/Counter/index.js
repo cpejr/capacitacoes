@@ -1,18 +1,6 @@
 import React, {useState} from 'react';
 import './styles.css';
 
-// example of arrow function
-// var multiplyES5 = function(x, y) {
-//   return x * y;
-// };
-//===============
-// const multiplyES6 = (x, y) => x * y;
-
-
-
-
-// import { Container } from './styles';
-
 export default function DynamicCounter() {
   const [count,setCount] = useState(0);
   
