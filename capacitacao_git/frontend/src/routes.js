@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Counter from './pages/Counter';
 import Fetching from './pages/FetchingData';
 import SimpleCounter from './pages/SimpleCounter';
+import Calculator from './pages/Calculator';
 
 
 export default function Routes() {
@@ -17,6 +18,9 @@ export default function Routes() {
                 <Route path="/counter" exact component={Counter} />
                 <Route path="/fetch" exact component={Fetching} />
                 <Route path="/simplecounter" exact component={SimpleCounter} />
+                <Route path="/simplecounter" exact component={SimpleCounter} />
+                <Route path="/calculator" exact component={Calculator} />
+
             </Switch>
         </BrowserRouter>
     );
