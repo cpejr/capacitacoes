@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 export default function Counter() {
 
-  function Multiplaca() {
+  function Multiplica() {
     var intnum = parseInt(numb1);
     var intnum2 = parseInt(numb2)
     setValor(intnum*intnum2);
@@ -33,7 +33,7 @@ export default function Counter() {
 
   return (
     <div className="container">
-     <button onClick={() => Multiplaca()}>
+     <button onClick={() => Multiplica()}>
         Multiplação
      </button>
 
