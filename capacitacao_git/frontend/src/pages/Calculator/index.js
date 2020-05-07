@@ -34,7 +34,7 @@ export default function Counter() {
   return (
     <div className="container">
      <button onClick={() => Multiplica()}>
-        Multiplação
+        Multiplicação
      </button>
 
       <button onClick={() => Soma()}>
