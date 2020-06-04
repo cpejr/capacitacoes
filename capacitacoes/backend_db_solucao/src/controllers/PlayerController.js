@@ -23,7 +23,7 @@ module.exports = {
       return response.status(200).json(result);
     } catch (error) {
       console.log(error)
-      return response.status(500).json({ message: "Fatal error while trying to create player" })
+      return response.status(500).json({ message: "Fatal error while trying to update player" })
     }
 
   },
