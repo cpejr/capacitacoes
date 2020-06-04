@@ -5,7 +5,7 @@ const PlayerController = require('./controllers/PlayerController');
 
 routes.post('/players', PlayerController.create);
 
-routes.get('/players/:id', PlayerController.getOne);
+routes.get('/player/:id', PlayerController.getOne);
 
 routes.get('/players', PlayerController.index);
 
