@@ -1,19 +1,19 @@
 const PlayerModel = require('../models/PlayerModel');
 
 module.exports = {
-  async create(request, reponse) {
+  async create(request, response) {
 
   },
-  async update(request, reponse) {
+  async update(request, response) {
 
   },
-  async index(request, reponse) {
+  async index(request, response) {
 
   },
-  async getOne(request, reponse) {
+  async getOne(request, response) {
 
   },
-  async delete(request, reponse) {
+  async delete(request, response) {
 
   },
 }
