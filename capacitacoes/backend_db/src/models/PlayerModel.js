@@ -1,19 +1,19 @@
 const connection = require('../database/connection');
 
 module.exports = {
-  async create(request, reponse) {
+  async create(player) {
 
   },
-  async update(request, reponse) {
+  async update(id) {
 
   },
-  async getAll(request, reponse) {
+  async getAll() {
 
   },
-  async getOne(request, reponse) {
+  async getOne(id) {
 
   },
-  async delete(request, reponse) {
+  async delete(id) {
 
   },
 } 
