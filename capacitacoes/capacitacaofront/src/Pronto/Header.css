@@ -1,0 +1,31 @@
+.Header{
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #B064C6;
+    font-size: 200%;
+    color: #ffff;
+}
+
+.SiteLogo{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.ToolBar{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.SocialMedia{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+}

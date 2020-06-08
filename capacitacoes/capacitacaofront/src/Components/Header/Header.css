@@ -1,0 +1,19 @@
+.header{
+    height: 10%;
+    background-color: #B064C6;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 200%;
+    align-items: center;
+}
+
+.title{
+    display: flex
+}
+
+.navBar{
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
