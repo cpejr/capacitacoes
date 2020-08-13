@@ -24,10 +24,26 @@ const classSchema = new mongoose.Schema({
   tests: [testSchema],
 });
 
-const Categ = mongoose.model('Class', classSchema);
+const Class = mongoose.model('Class', classSchema);
 
 class classActions {
 
+  static async createClass(newClass){
+    await Class.create(newClass)
+  };
+
+  static async getClasses() {
+    const result = await Class.find({});
+    return result;
+  };
+
+  static async updateClass(id, newClass){
+    await Class.findByIdAndUpdate(id, newClass);
+  };
+
+  static async deleteClass(id){
+    await Class.findByIdAndDelete(id);
+  };
 }
 
 module.exports = classActions;

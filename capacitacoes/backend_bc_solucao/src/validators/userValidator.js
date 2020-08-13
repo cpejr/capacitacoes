@@ -5,7 +5,7 @@ const userValidator = new Object();
 userValidator.create = {
     [Segments.BODY]: Joi.object().keys({
         name: Joi.string().required(),
-        string: Joi.string().required(),
+        password: Joi.string().required(),
         type: Joi.string().valid("teacher, student").required(),
     })
 }
@@ -16,7 +16,7 @@ userValidator.update = {
     }),
     [Segments.BODY]: Joi.object().keys({
         name: Joi.string().optional(),
-        string: Joi.string().optional(),
+        password: Joi.string().optional(),
         type: Joi.string().valid("teacher, student").optional(),
     })
 }
