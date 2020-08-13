@@ -6,7 +6,7 @@ module.exports = {
         try {
             const newUser = request.body;
             await User.createUser(newUser);
-            return response.status(200).json({ message: "Usuario criado com sucesso!" })
+            return response.status(201).json({ message: "Usuario criado com sucesso!" })
         } catch (error) {
             console.log(error);
             return response.status(500).json({ error: "Internal server error while trying to create User" });

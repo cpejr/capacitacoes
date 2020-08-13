@@ -6,7 +6,7 @@ module.exports = {
         try {
             const newClass = request.body;
             await Class.createClass(newClass);
-            return response.status(200).json({ message: "Turma criada com sucesso!" })
+            return response.status(201).json({ message: "Turma criada com sucesso!" })
         } catch (error) {
             console.log(error);
             return response.status(500).json({ error: "Internal server error while trying to create Class" });

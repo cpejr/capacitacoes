@@ -13,7 +13,7 @@ classValidator.create = {
 classValidator.update = {
     [Segments.PARAMS]: Joi.object().keys({
         id: Joi.string().required(),
-    })
+    }),
     [Segments.BODY]: Joi.object().keys({
         responsible: Joi.string().optional(),
         students: Joi.array().optional(),
