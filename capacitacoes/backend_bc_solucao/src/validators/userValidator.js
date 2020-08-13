@@ -6,7 +6,7 @@ userValidator.create = {
     [Segments.BODY]: Joi.object().keys({
         name: Joi.string().required(),
         password: Joi.string().required(),
-        type: Joi.string().valid("teacher, student").required(),
+        type: Joi.string().valid("teacher", "student").required(),
     })
 }
 
@@ -17,7 +17,7 @@ userValidator.update = {
     [Segments.BODY]: Joi.object().keys({
         name: Joi.string().optional(),
         password: Joi.string().optional(),
-        type: Joi.string().valid("teacher, student").optional(),
+        type: Joi.string().valid("teacher", "student").optional(),
     })
 }
 

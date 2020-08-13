@@ -1,4 +1,4 @@
-const User = require('../models/classModel')
+const User = require('../models/userModel')
 
 module.exports = {
 
@@ -16,7 +16,7 @@ module.exports = {
     async read(request, response) {
         try {
             let result = await User.getUsers();
-            return response.status(200).json({ Useres: result, message: "Usuarios recebidos com sucesso!" });
+            return response.status(200).json({ Users: result, message: "Usuarios recebidos com sucesso!" });
         } catch (error) {
             console.log(error);
             return response.status(500).json({ error: "Internal server error while trying to get Users" });
