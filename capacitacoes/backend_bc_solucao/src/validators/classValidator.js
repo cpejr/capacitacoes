@@ -30,7 +30,7 @@ classValidator.delete = {
 classValidator.addStudents = {
     [Segments.HEADERS]: Joi.object().keys({
         authorization: Joi.string().required(),
-    }),
+    }).unknown(),
     [Segments.BODY]: Joi.object().keys({
         students: Joi.array().required(),
     })
@@ -39,7 +39,7 @@ classValidator.addStudents = {
 classValidator.removeStudents = {
     [Segments.HEADERS]: Joi.object().keys({
         authorization: Joi.string().required(),
-    }),
+    }).unknown(),
     [Segments.BODY]: Joi.object().keys({
         students: Joi.array().required(),
     })

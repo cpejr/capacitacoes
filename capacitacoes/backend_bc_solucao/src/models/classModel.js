@@ -70,6 +70,7 @@ class classActions {
   static async deleteTask(taskId, id) {
     await Class.findOneAndDelete({ _id: taskId, responsible: id });
   };
+
 }
 
 module.exports = classActions;

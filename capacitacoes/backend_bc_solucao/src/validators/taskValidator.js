@@ -15,13 +15,13 @@ taskValidator.create = {
 taskValidator.read = {
     [Segments.HEADERS]: Joi.object().keys({
         authorization: Joi.string().required(),
-    }),
+    }).unknown(),
 }
 
 taskValidator.update = {
     [Segments.HEADERS]: Joi.object().keys({
         authorization: Joi.string().required(),
-    }),
+    }).unknown(),
     [Segments.PARAMS]: Joi.object().keys({
         taskId: Joi.string().required(),
     }),
@@ -35,7 +35,7 @@ taskValidator.update = {
 taskValidator.delete = {
     [Segments.HEADERS]: Joi.object().keys({
         authorization: Joi.string().required(),
-    }),
+    }).unknown(),
     [Segments.PARAMS]: Joi.object().keys({
         taskId: Joi.string().required(),
     }),

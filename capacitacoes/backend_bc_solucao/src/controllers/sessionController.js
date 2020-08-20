@@ -5,16 +5,15 @@ module.exports = {
 
     async create(request, response) {
         try {
-            const { email, password } = request.body;
+            const { name, password } = request.body;
 
-            const result = await User.signIn(email, password);
-
-            if (result.user) {
-                const user = result.user;
+            const result = await User.signIn(name, password);
+            if (result && result._id) {
+                const user = result;
                 const accessToken = jwt.sign({ user }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "30d" });
                 return response.status(201).json({ accessToken, user, message: "Sessao criada com sucesso!" })
             } else {
-                return response.status(400).json({ message: result.error });
+                return response.status(400).json({ message: "Credenciais inválidas" });
             }
 
         } catch (error) {

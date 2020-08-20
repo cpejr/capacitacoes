@@ -70,7 +70,7 @@ module.exports = {
             const { classId } = request.params;
             const { students } = request.body;
 
-            await User.deleteUser(id);
+            await Class.findByIdAndUpdate(classId, { $pull: {"students": { $in: students }}})
             return response.json({ message: 'Estudantes removidos com sucesso!' });
         } catch (error) {
             console.log(error);

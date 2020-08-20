@@ -29,7 +29,7 @@ routes.post("addStudents/:classId", authenticateToken, isTeacher, celebrate(clas
 routes.get("/class", classController.read);
 routes.put("/class/:id", celebrate(classValidator.update), classController.update);
 routes.delete("/class/:id", celebrate(classValidator.delete), classController.delete);
-routes.delete("removeStudents/:classId", authenticateToken, isTeacher, celebrate(classValidator.removeStudents), classController.removeStudents);
+routes.delete("/removeStudents/:classId", authenticateToken, isTeacher, celebrate(classValidator.removeStudents), classController.removeStudents);
 
 //TASK
 routes.post("/task", authenticateToken, isTeacher, imageUpload('imageFile'), celebrate(taskValidator.create), taskController.create);
