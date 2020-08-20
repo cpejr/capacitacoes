@@ -71,6 +71,10 @@ class classActions {
     await Class.findOneAndDelete({ _id: taskId, responsible: id });
   };
 
+  static async addStudents(classId, id, students) {
+    const result = await Class.findOneAndUpdate({ _id: classId, responsible: id }, { $push:  {students} });
+    return result;
+  }
 }
 
 module.exports = classActions;

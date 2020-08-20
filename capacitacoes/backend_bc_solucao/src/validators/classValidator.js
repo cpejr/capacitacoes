@@ -31,6 +31,9 @@ classValidator.addStudents = {
     [Segments.HEADERS]: Joi.object().keys({
         authorization: Joi.string().required(),
     }).unknown(),
+    [Segments.PARAMS]: Joi.object().keys({
+        classId: Joi.string().required(),
+    }),
     [Segments.BODY]: Joi.object().keys({
         students: Joi.array().required(),
     })
