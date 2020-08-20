@@ -25,14 +25,14 @@ routes.delete("/user/:id", celebrate(userValidator.delete), userController.delet
 
 //CLASS
 routes.post("/class", celebrate(classValidator.create), classController.create);
-routes.post("addStudents/:classId", authenticateToken, isTeacher, celebrate(classValidator.addStudents), classController.addStudents);
+routes.post("/addStudents/:classId", authenticateToken, isTeacher, celebrate(classValidator.addStudents), classController.addStudents);
 routes.get("/class", classController.read);
 routes.put("/class/:id", celebrate(classValidator.update), classController.update);
 routes.delete("/class/:id", celebrate(classValidator.delete), classController.delete);
 routes.delete("/removeStudents/:classId", authenticateToken, isTeacher, celebrate(classValidator.removeStudents), classController.removeStudents);
 
 //TASK
-routes.post("/task", authenticateToken, isTeacher, imageUpload('imageFile'), celebrate(taskValidator.create), taskController.create);
+routes.post("/task/:classId", authenticateToken, isTeacher, imageUpload('imageFile'), celebrate(taskValidator.create), taskController.create);
 routes.get("/task", authenticateToken, isStudent, celebrate(taskValidator.read), taskController.read);
 routes.put("/task/:taskId", authenticateToken, imageUpload('imageFile', 'update'), isTeacher, celebrate(taskValidator.update), taskController.update);
 routes.delete("/task/:taskId", authenticateToken, isTeacher, celebrate(taskValidator.delete), taskController.delete);

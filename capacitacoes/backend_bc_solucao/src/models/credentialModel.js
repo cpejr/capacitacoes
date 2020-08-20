@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const credentialsSchema = new mongoose.Schema({
-    accessToken: {
+    access_token: {
         type: String,
         required: true
     },
-    refreshToken: {
+    refresh_token: {
         type: String,
         required: true
     },
@@ -13,21 +13,17 @@ const credentialsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    tokenType: {
+    token_type: {
         type: String,
         required: true
     },
-    expiryDate: {
+    expiry_date: {
         type: Number,
         required: true
     }
 });
 
 const Credential = mongoose.model('Credential', credentialsSchema);
-
-async function createCredentials(credential) {
-    await Credential.create(credential);
-}
 
 class credentialActions {
     static async createCredentials(credential) {
