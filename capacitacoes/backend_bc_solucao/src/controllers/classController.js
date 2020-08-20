@@ -25,7 +25,7 @@ module.exports = {
 
     async update(request, response) {
         try {
-            const {id} = request.params;
+            const { id } = request.params;
             const newClass = request.body;
 
             await Class.updateClass(id, newClass);
@@ -39,7 +39,7 @@ module.exports = {
 
     async delete(request, response) {
         try {
-            const {id} = request.params;
+            const { id } = request.params;
 
             await Class.deleteClass(id);
             return response.json({ message: 'Usuario deletado com sucesso!' });
@@ -52,27 +52,29 @@ module.exports = {
 
     async addStudents(request, response) {
         try {
-            const {id} = request.params;
+            const { id } = request.session;
+            const { classId } = request.params;
+            const { students } = request.body;
 
-            await User.deleteUser(id);
-            return response.json({ message: 'Usuario deletado com sucesso!' });
-
+            await User.addStudents(classId, id, students);
+            return response.json({ message: 'Estudantes adicionados com sucesso!' });
         } catch (error) {
             console.log(error);
-            return response.status(500).json({ error: "Internal server error while trying to delete Users" });
+            return response.status(500).json({ error: "Internal server error while trying to Add students to Class" });
         }
     },
 
     async removeStudents(request, response) {
         try {
-            const {id} = request.params;
+            const { id } = request.session;
+            const { classId } = request.params;
+            const { students } = request.body;
 
             await User.deleteUser(id);
-            return response.json({ message: 'Usuario deletado com sucesso!' });
-
+            return response.json({ message: 'Estudantes removidos com sucesso!' });
         } catch (error) {
             console.log(error);
-            return response.status(500).json({ error: "Internal server error while trying to delete Users" });
+            return response.status(500).json({ error: "Internal server error while trying to Remove students from Class" });
         }
     },
 }

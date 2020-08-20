@@ -10,7 +10,7 @@ module.exports = {
             const { originalname, buffer, mimetype } = request.file
 
             const imageId = await GoogleDrive.uploadImage(originalname, buffer, mimetype);
-        
+
             newTask.imageId = imageId;
 
             await Class.createTaskByTeacherId(id, newTask);

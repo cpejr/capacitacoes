@@ -22,7 +22,7 @@ module.exports = {
             return response.status(500).json({ error: "Internal server error while trying to Log In" });
         }
     },
-    
+
     async validate(request, response) {
         try {
             const authHeader = request.headers.authorization;

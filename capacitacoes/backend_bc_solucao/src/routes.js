@@ -18,18 +18,18 @@ const { authenticateToken, isTeacher, isStudent } = require('./middlewares/authe
 const imageUpload = require('./middlewares/imageUpload');
 
 //USER
-routes.post("/user",  celebrate(userValidator.create), userController.create);
+routes.post("/user", celebrate(userValidator.create), userController.create);
 routes.get("/user", userController.read);
 routes.put("/user/:id", celebrate(userValidator.update), userController.update);
 routes.delete("/user/:id", celebrate(userValidator.delete), userController.delete);
 
 //CLASS
-routes.post("/class",  celebrate(classValidator.create), classController.create);
-routes.post("addStudents", authenticateToken, isTeacher, celebrate(classValidator.addStudents), classController.addStudents);
+routes.post("/class", celebrate(classValidator.create), classController.create);
+routes.post("addStudents/:classId", authenticateToken, isTeacher, celebrate(classValidator.addStudents), classController.addStudents);
 routes.get("/class", classController.read);
 routes.put("/class/:id", celebrate(classValidator.update), classController.update);
 routes.delete("/class/:id", celebrate(classValidator.delete), classController.delete);
-routes.delete("removeStudents", authenticateToken, isTeacher, celebrate(classValidator.removeStudents), classController.removeStudents);
+routes.delete("removeStudents/:classId", authenticateToken, isTeacher, celebrate(classValidator.removeStudents), classController.removeStudents);
 
 //TASK
 routes.post("/task", authenticateToken, isTeacher, imageUpload('imageFile'), celebrate(taskValidator.create), taskController.create);

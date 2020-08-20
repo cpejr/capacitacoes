@@ -20,7 +20,7 @@ const User = mongoose.model('User', userSchema);
 
 class userActions {
 
-  static async createUser(newUser){
+  static async createUser(newUser) {
     await User.create(newUser)
   };
 
@@ -29,11 +29,11 @@ class userActions {
     return result;
   };
 
-  static async updateUser(id, newUser){
+  static async updateUser(id, newUser) {
     await User.findByIdAndUpdate(id, newUser);
   };
 
-  static async deleteUser(id){
+  static async deleteUser(id) {
     await User.findByIdAndDelete(id);
   };
 }

@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 
 const testSchema = new mongoose.Schema({
-    subject: {
-        type: String,
-        required: true
-    },
-    text: {
-        type: String,
-        required: true
-    },
-    imageId: {
-      type: String,
-      required: false
-    }
+  subject: {
+    type: String,
+    required: true
+  },
+  text: {
+    type: String,
+    required: true
+  },
+  imageId: {
+    type: String,
+    required: false
+  }
 })
 
 const classSchema = new mongoose.Schema({
@@ -32,7 +32,7 @@ const Class = mongoose.model('Class', classSchema);
 
 class classActions {
 
-  static async createClass(newClass){
+  static async createClass(newClass) {
     await Class.create(newClass)
   };
 
@@ -41,34 +41,34 @@ class classActions {
     return result;
   };
 
-  static async updateClass(id, newClass){
+  static async updateClass(id, newClass) {
     await Class.findByIdAndUpdate(id, newClass);
   };
 
-  static async deleteClass(id){
+  static async deleteClass(id) {
     await Class.findByIdAndDelete(id);
   };
 
-  static async createTaskByClassId(id, newTask){
-    await Class.findByIdAndUpdate({id}, {$push: {tasks: newTask}});
+  static async createTaskByClassId(id, newTask) {
+    await Class.findByIdAndUpdate({ id }, { $push: { tasks: newTask } });
   };
 
-  static async getTasksByStudentId(id){
-    const result = await Class.find({students: id}, {tasks: 1})
+  static async getTasksByStudentId(id) {
+    const result = await Class.find({ students: id }, { tasks: 1 })
     return result;
   };
 
-  static async getTaksByTaskId(id){
-    const result = await Class.findById({id}, {tasks: 1});
+  static async getTaksByTaskId(id) {
+    const result = await Class.findById({ id }, { tasks: 1 });
     return result;
   };
 
-  static async updateTask(taskId, id, newTask){
-    await Class.findOneAndUpdate({_id: taskId, responsible: id}, newTask);
+  static async updateTask(taskId, id, newTask) {
+    await Class.findOneAndUpdate({ _id: taskId, responsible: id }, newTask);
   };
 
-  static async deleteTask(taskId, id){
-    await Class.findOneAndDelete({_id: taskId, responsible: id});
+  static async deleteTask(taskId, id) {
+    await Class.findOneAndDelete({ _id: taskId, responsible: id });
   };
 }
 
