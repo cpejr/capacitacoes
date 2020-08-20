@@ -1,4 +1,5 @@
-const User = require('../models/userModel')
+const User = require('../models/userModel');
+const { addStudents, removeStudents } = require('../validators/classValidator');
 
 module.exports = {
 
@@ -25,7 +26,7 @@ module.exports = {
 
     async update(request, response) {
         try {
-            const {id} = request.params;
+            const { id } = request.params;
             const newUser = request.body;
 
             await User.updateUser(id, newUser);
@@ -39,7 +40,7 @@ module.exports = {
 
     async delete(request, response) {
         try {
-            const {id} = request.params;
+            const { id } = request.params;
 
             await User.deleteUser(id);
             return response.json({ message: 'Usuario deletado com sucesso!' });
