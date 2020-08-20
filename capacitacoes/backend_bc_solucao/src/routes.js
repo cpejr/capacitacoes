@@ -39,6 +39,6 @@ routes.delete("/task/:taskId", authenticateToken, isTeacher, celebrate(taskValid
 
 //SESSION
 routes.post("/session", celebrate(sessionValidator.create), sessionController.create);
-routes.ger("/validate", celebrate(sessionValidator.validate), sessionController.validate);
+routes.get("/validate", celebrate(sessionValidator.validate), sessionController.validate);
 
 module.exports = routes;

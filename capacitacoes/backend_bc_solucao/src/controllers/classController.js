@@ -49,4 +49,30 @@ module.exports = {
             return response.status(500).json({ error: "Internal server error while trying to delete Classes" });
         }
     },
+
+    async addStudents(request, response) {
+        try {
+            const {id} = request.params;
+
+            await User.deleteUser(id);
+            return response.json({ message: 'Usuario deletado com sucesso!' });
+
+        } catch (error) {
+            console.log(error);
+            return response.status(500).json({ error: "Internal server error while trying to delete Users" });
+        }
+    },
+
+    async removeStudents(request, response) {
+        try {
+            const {id} = request.params;
+
+            await User.deleteUser(id);
+            return response.json({ message: 'Usuario deletado com sucesso!' });
+
+        } catch (error) {
+            console.log(error);
+            return response.status(500).json({ error: "Internal server error while trying to delete Users" });
+        }
+    },
 }

@@ -116,7 +116,7 @@ exports.uploadFile = function uploadFile(buffer, name, mimeType) {
         bufferStream.end(buffer);
 
         const drive = google.drive({ version: 'v3', auth: oAuth2Client });
-        var fileMetadata = { name: `${Date.now()}${path.extname(name)}`, parents: ["1chQUtCqjDxkkEPVldCvNnlC3NCoqp7YK"] };
+        var fileMetadata = { name: `${Date.now()}${path.extname(name)}`, parents: ["1iWvHoKvj2gegxs-aDD2aDQ5JE7gp7KT0"] };
 
         var media = {
             mimeType,

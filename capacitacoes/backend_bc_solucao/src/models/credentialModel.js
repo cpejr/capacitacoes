@@ -25,19 +25,32 @@ const credentialsSchema = new mongoose.Schema({
 
 const Credential = mongoose.model('Credential', credentialsSchema);
 
+async function createCredentials(credential) {
+    await Credential.create(credential);
+}
+
 class credentialActions {
+    static async createCredentials(credential) {
+        await Credential.create(credential);
+    };
+
     static async updateCredentials(credentials) {
-        await Credential.create(credentials)
+        const credential = Credential.findOne({});
+        const result = {};
+        if (!credential) {
+            result = await Credential.createCredentials(credentials);
+            return result;
+        }
+
+        result = await Credential.findOneAndUpdate({}, credentials);
+        return credentials;
     };
 
     static async getCredentials() {
-        const result = await Credential.find({});
+        const result = await Credential.findOne({});
         return result;
     };
 }
 
-async function createCredentials(credentials){
-
-}
 
 module.exports = credentialActions;
