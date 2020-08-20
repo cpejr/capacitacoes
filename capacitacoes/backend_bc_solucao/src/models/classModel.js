@@ -8,6 +8,10 @@ const testSchema = new mongoose.Schema({
     text: {
         type: String,
         required: true
+    },
+    imageId: {
+      type: String,
+      required: false
     }
 })
 
@@ -43,6 +47,28 @@ class classActions {
 
   static async deleteClass(id){
     await Class.findByIdAndDelete(id);
+  };
+
+  static async createTaskByClassId(id, newTask){
+    await Class.findByIdAndUpdate({id}, {$push: {tasks: newTask}});
+  };
+
+  static async getTasksByStudentId(id){
+    const result = await Class.find({students: id}, {tasks: 1})
+    return result;
+  };
+
+  static async getTaksByTaskId(id){
+    const result = await Class.findById({id}, {tasks: 1});
+    return result;
+  };
+
+  static async updateTask(taskId, id, newTask){
+    await Class.findOneAndUpdate({_id: taskId, responsible: id}, newTask);
+  };
+
+  static async deleteTask(taskId, id){
+    await Class.findOneAndDelete({_id: taskId, responsible: id});
   };
 }
 

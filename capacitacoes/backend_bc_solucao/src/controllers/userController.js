@@ -1,4 +1,5 @@
-const User = require('../models/userModel')
+const User = require('../models/userModel');
+const { addStudents, removeStudents } = require('../validators/classValidator');
 
 module.exports = {
 
@@ -38,6 +39,32 @@ module.exports = {
     },
 
     async delete(request, response) {
+        try {
+            const {id} = request.params;
+
+            await User.deleteUser(id);
+            return response.json({ message: 'Usuario deletado com sucesso!' });
+
+        } catch (error) {
+            console.log(error);
+            return response.status(500).json({ error: "Internal server error while trying to delete Users" });
+        }
+    },
+
+    async addStudents(request, response) {
+        try {
+            const {id} = request.params;
+
+            await User.deleteUser(id);
+            return response.json({ message: 'Usuario deletado com sucesso!' });
+
+        } catch (error) {
+            console.log(error);
+            return response.status(500).json({ error: "Internal server error while trying to delete Users" });
+        }
+    },
+
+    async removeStudents(request, response) {
         try {
             const {id} = request.params;
 
