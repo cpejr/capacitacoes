@@ -1,0 +1,36 @@
+type User {
+  user_id: String
+  name: String
+  email: String
+  age: Int
+}
+
+input UserParams {
+  user_id: String
+  name: String
+  email: String
+  age: Int
+}
+
+input UserInput {
+  name: String!
+  email: String!
+  password: String!
+  age: Int!
+}
+
+input UserUpdate {
+  name: String
+  age: Int
+}
+
+type Query {
+  users(filter: UserParams): [User]
+  user(user_id: String): User
+}
+
+type Mutation {
+  createUser(data: UserInput): User
+  deleteUser(user_id: String): User
+  updateUser(user_id: String, data: UserUpdate): User
+}
