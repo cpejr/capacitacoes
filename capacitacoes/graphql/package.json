@@ -27,7 +27,7 @@
     "express": "^4.17.1",
     "firebase": "^8.0.1",
     "graphql": "^15.5.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "knex": "^0.21.6",
     "lodash": "^4.17.20",
     "merge-graphql-schemas": "^1.7.8",
